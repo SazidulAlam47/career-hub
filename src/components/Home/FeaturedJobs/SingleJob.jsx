@@ -7,7 +7,7 @@ const SingleJob = ({ job }) => {
     return (
         <div className="border rounded-lg p-6">
             <div className="max-w-48 pb-3">
-                <img src={job.logo} alt="Google" />
+                <img src={job.logo} alt={job.company_name} />
             </div>
             <h4 className="font-bold text-md">{job.job_title}</h4>
             <p className="text-sm text-neutral-500 pt-1 pb-2 font-semibold">
@@ -31,7 +31,10 @@ const SingleJob = ({ job }) => {
                     <span>Salary : {job.salary}</span>
                 </div>
             </div>
-            <Link className="btn btn-sm bg-gradient-to-r from-indigo-400 to-purple-400 text-white rounded text-sm font-bold px-4">
+            <Link
+                to={`/job/${job.id}`}
+                className="btn btn-sm bg-gradient-to-r from-indigo-400 to-purple-400 text-white rounded text-sm font-bold px-4"
+            >
                 View Details
             </Link>
         </div>
