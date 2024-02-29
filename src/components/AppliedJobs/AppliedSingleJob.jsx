@@ -2,8 +2,16 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { IoLocationOutline } from "react-icons/io5";
 import { AiOutlineDollarCircle } from "react-icons/ai";
+import { removeFromLS } from "../../utilities/localstorage";
 
-const AppliedSingleJob = ({ job }) => {
+const AppliedSingleJob = ({ job, displayJobs, setDisplayJobs }) => {
+    const handelDiscard = () => {
+        removeFromLS(job.id);
+        const remaining = displayJobs.filter((jobx) => jobx.id !== job.id);
+        setDisplayJobs(remaining);
+        console.log(remaining);
+    };
+
     return (
         <div className="border rounded-lg p-6 flex items-center gap-4">
             <div className="max-w-48 pb-3 bg-[#f4f4f4] rounded-md w-44 h-44 flex items-center justify-center">
@@ -43,12 +51,20 @@ const AppliedSingleJob = ({ job }) => {
             >
                 View Details
             </Link>
+            <button
+                onClick={handelDiscard}
+                className="btn bg-gradient-to-r from-indigo-400 to-purple-400 text-white rounded text-sm font-bold px-4"
+            >
+                Discard
+            </button>
         </div>
     );
 };
 
 AppliedSingleJob.propTypes = {
     job: PropTypes.object.isRequired,
+    displayJobs: PropTypes.array.isRequired,
+    setDisplayJobs: PropTypes.func.isRequired,
 };
 
 export default AppliedSingleJob;

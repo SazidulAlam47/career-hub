@@ -11,11 +11,12 @@ import { addToLS } from "../../utilities/localstorage";
 
 const JobDetails = () => {
     const { jobId } = useParams();
+    const jobIdInt = parseInt(jobId);
     const jobList = useLoaderData();
-    const selectedJob = jobList.find((job) => job.id == jobId);
+    const selectedJob = jobList.find((job) => job.id == jobIdInt);
 
     const applied = () => {
-        const added = addToLS(jobId);
+        const added = addToLS(jobIdInt);
         added
             ? toast("Successfully applied for " + selectedJob.job_title)
             : toast("You have alrady applied for this job.");

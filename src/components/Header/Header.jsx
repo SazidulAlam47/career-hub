@@ -19,7 +19,7 @@ const Header = () => {
                 className={({ isActive }) =>
                     isActive ? activeRoute : inactiveRoute
                 }
-                to="/jobs"
+                to="/applied-jobs"
             >
                 Applied Jobs
             </NavLink>

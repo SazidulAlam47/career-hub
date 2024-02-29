@@ -10,7 +10,7 @@ const saveJobsToLS = applied => localStorage.setItem('applied-jobs', JSON.string
 
 const addToLS = id => {
     const applied = getStoredJobs();
-    const exists = applied.find((jobId) => jobId === id);
+    const exists = applied.find((jobId) => jobId == id);
     if (!exists) {
         applied.push(id);
         // save to local storage
@@ -24,7 +24,7 @@ const addToLS = id => {
 const removeFromLS = id => {
     const cart = getStoredJobs();
     // removing every id
-    const remaining = cart.filter(idx => idx !== id);
+    const remaining = cart.filter(idx => idx != id);
     saveJobsToLS(remaining);
 }
 
