@@ -89,7 +89,7 @@ const JobDetails = () => {
                                 </p>
                             </div>
                             <div className="flex gap-1">
-                                <SlLocationPin className="w-6 h-5 text-indigo-400" />
+                                <SlLocationPin className="w-5 h-5 text-indigo-400" />
                                 <p className="text-sm text-neutral-500">
                                     <span className="font-bold text-neutral-900">
                                         Address :
