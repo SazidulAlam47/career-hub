@@ -36,7 +36,7 @@ const Header = () => {
     );
 
     return (
-        <div className="py-4 bg-[#f9f8ff]">
+        <div className="py-4 bg-[#f9f8ff] z-50">
             <div className="navbar container mx-auto">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -67,7 +67,7 @@ const Header = () => {
                             {links}
                         </nav>
                     </div>
-                    <Link to="/" className="text-2xl font-semibold">
+                    <Link to="/" className="text-xl md:text-2xl font-semibold">
                         CareerHub
                     </Link>
                 </div>
@@ -75,9 +75,9 @@ const Header = () => {
                     <nav className="flex gap-3 px-1">{links}</nav>
                 </div>
                 <div className="navbar-end">
-                    <Link className="btn bg-gradient-to-r from-indigo-400 to-purple-400 text-white px-5">
+                    <button className="btn bg-gradient-to-r from-indigo-400 to-purple-400 text-white px-3 md:px-5 z-50">
                         Start Applying
-                    </Link>
+                    </button>
                 </div>
             </div>
         </div>
