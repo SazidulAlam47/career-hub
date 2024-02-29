@@ -4,11 +4,11 @@ import { IoLocationOutline } from "react-icons/io5";
 import { AiOutlineDollarCircle } from "react-icons/ai";
 import { removeFromLS } from "../../utilities/localstorage";
 
-const AppliedSingleJob = ({ job, displayJobs, setDisplayJobs }) => {
+const AppliedSingleJob = ({ job, appliedJobs, setAppliedJobs }) => {
     const handelDiscard = () => {
         removeFromLS(job.id);
-        const remaining = displayJobs.filter((jobx) => jobx.id !== job.id);
-        setDisplayJobs(remaining);
+        const remaining = appliedJobs.filter((jobx) => jobx.id !== job.id);
+        setAppliedJobs(remaining);
         console.log(remaining);
     };
 
@@ -63,8 +63,8 @@ const AppliedSingleJob = ({ job, displayJobs, setDisplayJobs }) => {
 
 AppliedSingleJob.propTypes = {
     job: PropTypes.object.isRequired,
-    displayJobs: PropTypes.array.isRequired,
-    setDisplayJobs: PropTypes.func.isRequired,
+    appliedJobs: PropTypes.array.isRequired,
+    setAppliedJobs: PropTypes.func.isRequired,
 };
 
 export default AppliedSingleJob;

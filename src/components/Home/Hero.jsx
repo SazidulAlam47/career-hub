@@ -15,7 +15,7 @@ const Hero = () => {
                                 Dream Job
                             </span>
                         </h1>
-                        <p className="py-6 lg:w-3/4">
+                        <p className="text-neutral-500 py-6 lg:w-3/4">
                             Explore thousands of job opportunities with all the
                             information you need. Its your future. Come find it.
                             Manage all your job application from start to

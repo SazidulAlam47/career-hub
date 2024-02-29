@@ -4,10 +4,10 @@ const Blog = () => {
     return (
         <div>
             <PageTitle title="Blog" />
-            <div className="container mx-auto py-52 text-center">
-                <p className="font-bold text-3xl bg-gradient-to-r from-indigo-400 to-purple-400 inline-block text-transparent bg-clip-text">
+            <div className="container mx-auto py-44 text-center">
+                <h4 className="font-bold text-3xl bg-gradient-to-r from-indigo-400 to-purple-400 inline-block text-transparent bg-clip-text">
                     Coming Soon ...
-                </p>
+                </h4>
             </div>
         </div>
     );
