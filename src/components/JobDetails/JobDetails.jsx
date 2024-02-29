@@ -4,12 +4,22 @@ import { IoCalendarOutline } from "react-icons/io5";
 import { HiOutlinePhone } from "react-icons/hi2";
 import { HiOutlineEnvelope } from "react-icons/hi2";
 import { SlLocationPin } from "react-icons/sl";
-import { Link, useLoaderData, useParams } from "react-router-dom";
+import { useLoaderData, useParams } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { addToLS } from "../../utilities/localstorage";
 
 const JobDetails = () => {
     const { jobId } = useParams();
     const jobList = useLoaderData();
     const selectedJob = jobList.find((job) => job.id == jobId);
+
+    const applied = () => {
+        const added = addToLS(jobId);
+        added
+            ? toast("Successfully applied for " + selectedJob.job_title)
+            : toast("You have alrady applied for this job.");
+    };
 
     return (
         <>
@@ -99,9 +109,13 @@ const JobDetails = () => {
                             </div>
                         </div>
                     </div>
-                    <Link className="btn btn-block bg-gradient-to-r from-indigo-400 to-purple-400 text-white px-5 mt-3">
+                    <button
+                        onClick={applied}
+                        className="btn btn-block bg-gradient-to-r from-indigo-400 to-purple-400 text-white px-5 mt-3"
+                    >
                         Apply Now
-                    </Link>
+                    </button>
+                    <ToastContainer />
                 </div>
             </div>
         </>
