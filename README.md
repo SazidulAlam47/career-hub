@@ -1,8 +1,11 @@
-# React + Vite
+# Career Hub
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Career Hub is a React web application that allows users to browse and apply for various jobs. It uses the JSON Placeholder API to fetch mock data for the jobs and the users. It also uses Tailwind CSS for styling and Vite for bundling.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+-   Users can view a list of jobs on the home page, with pagination and filtering options.
+-   Users can click on a job to see more details, such as description, requirements, and company information.
+-   Users can apply for a job by filling out a form and uploading their resume.
+-   Users can view their profile and edit their personal information and skills.
+-   Users can view their applications and status on a dashboard.
