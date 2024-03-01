@@ -4,8 +4,9 @@ Career Hub is a React web application that allows users to browse and apply for 
 
 ## Features
 
--   Users can view a list of jobs on the home page, with pagination and filtering options.
--   Users can click on a job to see more details, such as description, requirements, and company information.
--   Users can apply for a job by filling out a form and uploading their resume.
--   Users can view their profile and edit their personal information and skills.
--   Users can view their applications and status on a dashboard.
+-   **Job Discovery:** The home page presents a curated list of available jobs for easy browsing.
+-   **Flexible Exploration:** A "View All Jobs" button expands the job list, with a dynamic toggle to "Show Less" for streamlined navigation.
+-   **Detailed Insights:** A "View Details" button provides in-depth information about each job posting.
+-   **Seamless Application:** Within job details, a prominent "Apply" button initiates the application process.
+-   **Application Management:** The "Applied Jobs" page offers a centralized view of submitted applications, including options for detailed review and removal.
+-   **Responsive Design:** The site is optimized for a seamless user experience across desktop and mobile devices.
