@@ -1,4 +1,4 @@
-import { Link, useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import PageTitle from "../PageTitle/PageTitle";
 import AppliedSingleJob from "./AppliedSingleJob";
 import { HiChevronDown } from "react-icons/hi2";
@@ -35,6 +35,24 @@ const AppliedJobs = () => {
             setDisplayJobs(appliedJobsList);
         }
     }, [jobList]);
+
+    const navigate = useNavigate();
+    const handleScroll = (elementId) => {
+        navigate("/");
+        setTimeout(() => {
+            const element = document.getElementById(elementId);
+            if (element) {
+                element.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                    duration: 500,
+                    offset: 15,
+                });
+            } else {
+                console.error(`Element with id ${elementId} not found`);
+            }
+        }, 150);
+    };
 
     return (
         <>
@@ -87,7 +105,7 @@ const AppliedJobs = () => {
                     ) : (
                         <div className="text-center py-16">
                             <h4 className="font-bold text-3xl bg-gradient-to-r from-indigo-400 to-purple-400 inline-block text-transparent bg-clip-text">
-                                You didn&apos;t applied for any {jobFilter} jobs
+                                You didn&apos;t applied for any {jobFilter} Jobs
                             </h4>
                         </div>
                     )}
@@ -95,17 +113,17 @@ const AppliedJobs = () => {
             ) : (
                 <div className="container mx-auto py-40 text-center">
                     <h4 className="font-bold text-3xl bg-gradient-to-r from-indigo-400 to-purple-400 inline-block text-transparent bg-clip-text">
-                        You didn&apos;t applied for any jobs
+                        You didn&apos;t applied for any Jobs
                     </h4>
                     <p className="text-neutral-500 py-2">
-                        Go back to Home Page to apply for Jobs
+                        Apply for jobs to see them listed here.
                     </p>
-                    <Link
-                        to="/"
+                    <button
+                        onClick={() => handleScroll("jobs")}
                         className="btn bg-gradient-to-r from-indigo-400 to-purple-400 text-white px-3 md:px-5 z-50"
                     >
-                        Go to Home
-                    </Link>
+                        Apply Now
+                    </button>
                 </div>
             )}
         </>

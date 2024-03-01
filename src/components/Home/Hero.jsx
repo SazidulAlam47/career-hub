@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "react-scroll";
 
 const Hero = () => {
     return (
@@ -21,7 +21,15 @@ const Hero = () => {
                             Manage all your job application from start to
                             finish.
                         </p>
-                        <Link className="btn bg-gradient-to-r from-indigo-400 to-purple-400 text-white px-5">
+                        <Link
+                            activeClass="active"
+                            to="jobs"
+                            spy={true}
+                            smooth={true}
+                            offset={15}
+                            duration={500}
+                            className="btn bg-gradient-to-r from-indigo-400 to-purple-400 text-white px-5"
+                        >
                             Get Started
                         </Link>
                     </div>

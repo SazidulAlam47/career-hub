@@ -18,7 +18,7 @@ const ErrorPage = () => {
                     to="/"
                     className="btn bg-gradient-to-r from-indigo-400 to-purple-400 text-white px-3 md:px-5 z-50"
                 >
-                    Return to Homepage
+                    Return to Home
                 </Link>
             </div>
             <Footer />

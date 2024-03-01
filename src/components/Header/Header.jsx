@@ -1,9 +1,11 @@
-import { Link, NavLink } from "react-router-dom";
+import { NavLink, Link, useLocation, useNavigate } from "react-router-dom";
+import { Link as LinkScroll } from "react-scroll";
 
 const Header = () => {
     const activeRoute =
         "bg-gradient-to-r from-indigo-400 to-purple-400 inline-block text-transparent bg-clip-text";
     const inactiveRoute = "text-black";
+    let location = useLocation();
 
     const links = (
         <>
@@ -34,6 +36,24 @@ const Header = () => {
             </NavLink>
         </>
     );
+
+    const navigate = useNavigate();
+    const handleScroll = (elementId) => {
+        navigate("/");
+        setTimeout(() => {
+            const element = document.getElementById(elementId);
+            if (element) {
+                element.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                    duration: 500,
+                    offset: 15,
+                });
+            } else {
+                console.error(`Element with id ${elementId} not found`);
+            }
+        }, 150);
+    };
 
     return (
         <div className="py-4 bg-[#f9f8ff] z-50">
@@ -75,9 +95,26 @@ const Header = () => {
                     <nav className="flex gap-3 px-1">{links}</nav>
                 </div>
                 <div className="navbar-end">
-                    <button className="btn bg-gradient-to-r from-indigo-400 to-purple-400 text-white px-3 md:px-5 z-50">
-                        Start Applying
-                    </button>
+                    {location.pathname === "/" ? (
+                        <LinkScroll
+                            activeClass="active"
+                            to="jobs"
+                            spy={true}
+                            smooth={true}
+                            offset={15}
+                            duration={500}
+                            className="btn bg-gradient-to-r from-indigo-400 to-purple-400 text-white px-3 md:px-5 z-50"
+                        >
+                            Start Applying
+                        </LinkScroll>
+                    ) : (
+                        <button
+                            onClick={() => handleScroll("jobs")}
+                            className="btn bg-gradient-to-r from-indigo-400 to-purple-400 text-white px-3 md:px-5 z-50"
+                        >
+                            Start Applying
+                        </button>
+                    )}
                 </div>
             </div>
         </div>
