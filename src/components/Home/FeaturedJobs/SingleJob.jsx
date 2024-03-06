@@ -6,11 +6,11 @@ import { AiOutlineDollarCircle } from "react-icons/ai";
 const SingleJob = ({ job }) => {
     return (
         <div className="border rounded-lg px-1 md:px-6 py-6">
-            <div className="max-w-48 pb-3 mx-auto">
+            <div className="max-w-48 pb-3 mx-auto md:mx-0">
                 <img
                     src={job.logo}
                     alt={job.company_name}
-                    className="mx-auto"
+                    className="mx-auto md:mx-0"
                 />
             </div>
             <h4 className="font-bold text-md text-center md:text-left">
@@ -37,20 +37,6 @@ const SingleJob = ({ job }) => {
                     <span>Salary : {job.salary}</span>
                 </div>
             </div>
-            {/* <div className="flex flex-col lg:flex-row items-center md:items-start text-sm text-neutral-500 font-semibold pt-3 pb-4">
-                <div className="flex items-center gap-1 mb-2 md:mb-0">
-                    <IoLocationOutline className="w-5 h-5" />
-                    <span>{job.contact_information.address}</span>
-                </div>
-                <div className="flex items-center gap-1">
-                    <AiOutlineDollarCircle className="w-5 h-5" />
-                    <span className="whitespace-nowrap">
-                        Salary: {job.salary}
-                    </span>
-                </div>
-            </div> */}
-
-            {/* end */}
             <div className="text-center md:text-left">
                 <Link
                     to={`/job/${job.id}`}

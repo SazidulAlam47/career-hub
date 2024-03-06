@@ -12,7 +12,7 @@ const CategoryList = () => {
     }, []);
 
     return (
-        <div className="container mx-auto py-16">
+        <div className="container px-3 md:px-3 mx-auto py-16">
             <SectionHeading
                 heading="Job Category List"
                 subHeading="Explore thousands of job opportunities with all the information you need. Its your future"

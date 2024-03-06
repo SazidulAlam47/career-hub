@@ -20,7 +20,7 @@ const FeaturedJobs = () => {
     }, [showAll, jobs.length]);
 
     return (
-        <div id="jobs" className="container mx-auto py-16 ">
+        <div id="jobs" className="container px-2 mx-auto py-16 ">
             <SectionHeading
                 heading="Featured Jobs"
                 subHeading="Explore thousands of job opportunities with all the information you need. Its your future"

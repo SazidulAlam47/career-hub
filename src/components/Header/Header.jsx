@@ -57,7 +57,7 @@ const Header = () => {
 
     return (
         <div className="py-4 bg-[#f9f8ff] z-50">
-            <div className="navbar container mx-auto">
+            <div className="navbar container md:px-6 mx-auto">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div

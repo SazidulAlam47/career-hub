@@ -25,7 +25,7 @@ const JobDetails = () => {
     return (
         <>
             <PageTitle title="Job Details" />
-            <div className="container mx-auto py-16 flex flex-col lg:flex-row gap-5 ">
+            <div className="container px-4 mx-auto py-16 flex flex-col lg:flex-row gap-5 ">
                 <div className="flex flex-col gap-3">
                     <p className="text-sm text-neutral-500">
                         <span className="font-bold text-neutral-900">
