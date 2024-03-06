@@ -59,7 +59,7 @@ const AppliedJobs = () => {
             <PageTitle title="Applied Jobs" />
 
             {appliedJobs.length ? (
-                <div className="container px-6 mx-auto py-16">
+                <div className="container px-6 mx-auto py-16 overflow-hidden">
                     <div className="mb-5 text-right">
                         <div className="dropdown">
                             <div tabIndex={0} role="button" className="btn m-1">

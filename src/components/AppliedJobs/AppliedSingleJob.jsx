@@ -13,8 +13,8 @@ const AppliedSingleJob = ({ job, appliedJobs, setAppliedJobs }) => {
     };
 
     return (
-        <div className="border rounded-lg p-6 flex items-center gap-4">
-            <div className="max-w-48 pb-3 bg-[#f4f4f4] rounded-md w-44 h-44 flex items-center justify-center">
+        <div className="border rounded-lg px-1 md:px-6 py-6 flex flex-col md:flex-row items-center gap-4">
+            <div className="max-w-48 pb-3 md:bg-[#f4f4f4] rounded-md w-32 md:w-44 md:h-44 flex items-center justify-center">
                 <img
                     src={job.logo}
                     alt={job.company_name}
@@ -22,11 +22,13 @@ const AppliedSingleJob = ({ job, appliedJobs, setAppliedJobs }) => {
                 />
             </div>
             <div className="grow">
-                <h4 className="font-bold text-md">{job.job_title}</h4>
-                <p className="text-sm text-neutral-500 pt-1 pb-2 font-semibold">
+                <h4 className="font-bold text-md text-center md:text-left">
+                    {job.job_title}
+                </h4>
+                <p className="text-sm text-neutral-500 pt-1 pb-2 font-semibold text-center md:text-left">
                     {job.company_name}
                 </p>
-                <div className="flex gap-2">
+                <div className="flex gap-2 justify-center md:justify-start">
                     <span className="text-sm bg-gradient-to-r from-indigo-400 to-purple-400 text-transparent bg-clip-text border border-purple-400 px-3 py-1 rounded font-semibold">
                         {job.remote_or_onsite}
                     </span>
@@ -34,7 +36,7 @@ const AppliedSingleJob = ({ job, appliedJobs, setAppliedJobs }) => {
                         {job.job_type}
                     </span>
                 </div>
-                <div className="flex flex-col gap-4 lg:flex-row text-sm text-neutral-500 font-semibold pt-3 pb-4">
+                <div className="flex flex-col gap-4 items-center md:items-start lg:flex-row text-sm text-neutral-500 font-semibold pt-3 pb-4">
                     <div className="flex gap-1">
                         <IoLocationOutline className="w-5 h-5" />
                         <span>{job.contact_information.address}</span>
