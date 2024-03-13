@@ -20,14 +20,14 @@ const JobDetails = () => {
         const added = addToLS(jobIdInt);
         added
             ? toast("Successfully applied for " + selectedJob.job_title)
-            : toast("You have alrady applied for this job.");
+            : toast("You have already applied for this job.");
     };
 
     return (
         <>
             <PageTitle title="Job Details" />
             <Helmet>
-                <title>CareerHub | Job Details</title>
+                <title>CareerHub | {selectedJob.job_title}</title>
             </Helmet>
             <div className="container px-4 mx-auto py-16 flex flex-col lg:flex-row gap-5 ">
                 <div className="flex flex-col gap-3">
