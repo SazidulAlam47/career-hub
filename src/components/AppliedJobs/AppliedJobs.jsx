@@ -4,6 +4,7 @@ import AppliedSingleJob from "./AppliedSingleJob";
 import { HiChevronDown } from "react-icons/hi2";
 import { getStoredJobs } from "../../utilities/localstorage";
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 
 const AppliedJobs = () => {
     const jobList = useLoaderData();
@@ -57,6 +58,10 @@ const AppliedJobs = () => {
     return (
         <>
             <PageTitle title="Applied Jobs" />
+
+            <Helmet>
+                <title>CareerHub | Applied Jobs</title>
+            </Helmet>
 
             {appliedJobs.length ? (
                 <div className="container px-6 mx-auto py-16 overflow-hidden">

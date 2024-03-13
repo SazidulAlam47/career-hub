@@ -8,6 +8,7 @@ import { useLoaderData, useParams } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { addToLS } from "../../utilities/localstorage";
+import { Helmet } from "react-helmet-async";
 
 const JobDetails = () => {
     const { jobId } = useParams();
@@ -25,6 +26,9 @@ const JobDetails = () => {
     return (
         <>
             <PageTitle title="Job Details" />
+            <Helmet>
+                <title>CareerHub | Job Details</title>
+            </Helmet>
             <div className="container px-4 mx-auto py-16 flex flex-col lg:flex-row gap-5 ">
                 <div className="flex flex-col gap-3">
                     <p className="text-sm text-neutral-500">

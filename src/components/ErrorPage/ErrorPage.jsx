@@ -1,10 +1,14 @@
 import { Link } from "react-router-dom";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
+import { Helmet } from "react-helmet-async";
 
 const ErrorPage = () => {
     return (
         <>
+            <Helmet>
+                <title>CareerHub | 404</title>
+            </Helmet>
             <Header />
             <div className="container mx-auto py-40 text-center">
                 <h4 className="font-bold text-3xl bg-gradient-to-r from-indigo-400 to-purple-400 inline-block text-transparent bg-clip-text">
