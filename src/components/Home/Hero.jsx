@@ -2,7 +2,7 @@ import { Link } from "react-scroll";
 
 const Hero = () => {
     return (
-        <div className="bg-[#f9f8ff] ">
+        <div className="bg-[#f9f8ff]">
             <div className="container px-2 md:px-6 mx-auto hero min-h-80">
                 <div className="hero-content flex-col lg:flex-row-reverse py-10 lg:p-0">
                     <div className="w-3/4 lg:w-1/2 flex justify-end ">

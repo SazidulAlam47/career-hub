@@ -1,39 +1,15 @@
 import { NavLink, Link, useLocation, useNavigate } from "react-router-dom";
 import { Link as LinkScroll } from "react-scroll";
+import PropTypes from "prop-types";
 
 const Header = () => {
-    const activeRoute =
-        "bg-gradient-to-r from-indigo-400 to-purple-400 inline-block text-transparent bg-clip-text";
-    const inactiveRoute = "text-black";
     let location = useLocation();
 
     const links = (
         <>
-            <NavLink
-                className={({ isActive }) =>
-                    isActive ? activeRoute : inactiveRoute
-                }
-                to="/"
-            >
-                Home
-            </NavLink>
-            <NavLink
-                className={({ isActive }) =>
-                    isActive ? activeRoute : inactiveRoute
-                }
-                to="/applied-jobs"
-            >
-                Applied Jobs
-            </NavLink>
-
-            <NavLink
-                className={({ isActive }) =>
-                    isActive ? activeRoute : inactiveRoute
-                }
-                to="/blog"
-            >
-                Blog
-            </NavLink>
+            <SingleNav pageTitle="Home" path="/" />
+            <SingleNav pageTitle="Applied Jobs" path="/applied-jobs" />
+            <SingleNav pageTitle="Blog" path="/blog" />
         </>
     );
 
@@ -122,3 +98,23 @@ const Header = () => {
 };
 
 export default Header;
+
+const SingleNav = ({ pageTitle, path }) => {
+    return (
+        <NavLink
+            className={({ isActive }) =>
+                isActive
+                    ? "bg-gradient-to-r from-indigo-400 to-purple-400 inline-block text-transparent bg-clip-text"
+                    : "text-black"
+            }
+            to={path}
+        >
+            {pageTitle}
+        </NavLink>
+    );
+};
+
+SingleNav.propTypes = {
+    pageTitle: PropTypes.string.isRequired,
+    path: PropTypes.string.isRequired,
+};
