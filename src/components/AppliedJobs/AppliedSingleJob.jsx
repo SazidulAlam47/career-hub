@@ -5,7 +5,7 @@ import { AiOutlineDollarCircle } from "react-icons/ai";
 import { removeFromLS } from "../../utilities/localstorage";
 
 const AppliedSingleJob = ({ job, appliedJobs, setAppliedJobs }) => {
-    const handelDiscard = () => {
+    const handleDiscard = () => {
         removeFromLS(job.id);
         const remaining = appliedJobs.filter((jobx) => jobx.id !== job.id);
         setAppliedJobs(remaining);
@@ -54,7 +54,7 @@ const AppliedSingleJob = ({ job, appliedJobs, setAppliedJobs }) => {
                 View Details
             </Link>
             <button
-                onClick={handelDiscard}
+                onClick={handleDiscard}
                 className="btn bg-gradient-to-r from-indigo-400 to-purple-400 text-white rounded text-sm font-bold px-4"
             >
                 Discard
